@@ -28,9 +28,10 @@ struct ContentView: View {
                 Spacer()
                 activityTheme
             }
-            .foregroundColor(.red)
-            Spacer()
+
         }
+        .foregroundColor(.red)
+        Spacer()
         .padding(.horizontal)
     }
     var animalTheme : some View {
@@ -41,7 +42,7 @@ struct ContentView: View {
             emojis = emojis.shuffled()
         } label: {
             VStack {
-                Image(systemName: "hare.fill")
+                Image(systemName: "hare.fill").font(.largeTitle)
                 Text("Animal")
             }
         }
@@ -54,7 +55,7 @@ struct ContentView: View {
             emojis = emojis.shuffled()
         } label: {
             VStack {
-                Image(systemName: "applelogo")
+                Image(systemName: "applelogo").font(.largeTitle)
                 Text("Food")
             }
         }
@@ -67,7 +68,7 @@ struct ContentView: View {
             emojis = emojis.shuffled()
         } label: {
             VStack {
-                Image(systemName: "figure.walk")
+                Image(systemName: "figure.walk").font(.largeTitle)
                 Text("Activity")
             }
         }
