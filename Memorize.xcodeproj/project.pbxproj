@@ -11,6 +11,7 @@
 		11D6CD2427A0E03A00B4E4FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D6CD2327A0E03A00B4E4FF /* ContentView.swift */; };
 		11D6CD2627A0E03C00B4E4FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D6CD2527A0E03C00B4E4FF /* Assets.xcassets */; };
 		11D6CD2927A0E03C00B4E4FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D6CD2827A0E03C00B4E4FF /* Preview Assets.xcassets */; };
+		11D6CD3027A6BD0E00B4E4FF /* HomeWork in Resources */ = {isa = PBXBuildFile; fileRef = 11D6CD2F27A6BD0E00B4E4FF /* HomeWork */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		11D6CD2327A0E03A00B4E4FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		11D6CD2527A0E03C00B4E4FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11D6CD2827A0E03C00B4E4FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		11D6CD2F27A6BD0E00B4E4FF /* HomeWork */ = {isa = PBXFileReference; lastKnownFileType = text; path = HomeWork; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				11D6CD2327A0E03A00B4E4FF /* ContentView.swift */,
 				11D6CD2527A0E03C00B4E4FF /* Assets.xcassets */,
 				11D6CD2727A0E03C00B4E4FF /* Preview Content */,
+				11D6CD2F27A6BD0E00B4E4FF /* HomeWork */,
 			);
 			path = Memorize;
 			sourceTree = "<group>";
@@ -127,6 +130,7 @@
 			files = (
 				11D6CD2927A0E03C00B4E4FF /* Preview Assets.xcassets in Resources */,
 				11D6CD2627A0E03C00B4E4FF /* Assets.xcassets in Resources */,
+				11D6CD3027A6BD0E00B4E4FF /* HomeWork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
