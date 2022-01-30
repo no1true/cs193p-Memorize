@@ -3,7 +3,7 @@ Required Tasks
 1. Get the Memorize game working as demonstrated in lectures 1 and 2. Type in all the code. Do not copy/paste from anywhere.
  (  암기 게임을 강의 1과 2의 설명에 따라 작동시키세요. 모든 코드를 입력합니다. 복사/붙여넣지 마십시오. )
 2. You can remove the ⊖ and ⊕ buttons at the bottom of the screen.
- ( 화면 하단에 있는 and, ⊕ 버튼을 제거할 수 있습니다. )
+ ( 화면 하단에 있는 ⊖ 버튼 and, ⊕ 버튼을 제거할 수 있습니다. )
 3. Add a title “Memorize!” to the top of the screen.
  ( 화면 상단에 "암기!"라는 제목을 추가합니다. )
 4. Add at least 3 “theme choosing” buttons to your UI, each of which causes all of the cards to be replaced with new cards that contain emoji that match the chosen theme. You can use Vehicles from lecture as one of the 3 themes if you want to, but you are welcome to create 3 (or more) completely new themes.
