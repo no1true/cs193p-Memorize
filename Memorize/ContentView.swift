@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    var emojis = ["🚗", "🚕", "🚙" , "🚌" ,"🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🛺", "🚔", "🚍", "🚘", "🚖", "🦼", "🚲", "🛴", "🚡", "🚠"]
+    @State var emojis = ["🚗", "🚕", "🚙" , "🚌" ,"🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🛺", "🚔", "🚍", "🚘", "🚖", "🦼", "🚲", "🛴", "🚡", "🚠"]
     @State var emojiCount = 4
     
     var body: some View {
@@ -21,12 +21,57 @@ struct ContentView: View {
                     }
                 }
             }
+            HStack {
+                animalTheme
+                Spacer()
+                foodTheme
+                Spacer()
+                activityTheme
+            }
             .foregroundColor(.red)
             Spacer()
         }
         .padding(.horizontal)
     }
-    
+    var animalTheme : some View {
+        Button {
+            //random count
+            emojiCount = Int.random(in: 1...8)
+            emojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️", "🐨", "🐯", "🦁"]
+            emojis = emojis.shuffled()
+        } label: {
+            VStack {
+                Image(systemName: "hare.fill")
+                Text("Animal")
+            }
+        }
+    }
+    var foodTheme : some View {
+        Button {
+            //random count
+            emojiCount = Int.random(in: 1...8)
+            emojis = ["🍏", "🍎", "🍐", "🍊", "🍋", "🍌", "🍉", "🍇", "🍓", "🫐", "🍈", "🍒"]
+            emojis = emojis.shuffled()
+        } label: {
+            VStack {
+                Image(systemName: "applelogo")
+                Text("Food")
+            }
+        }
+    }
+    var activityTheme: some View {
+        Button {
+            //random count
+            emojiCount = Int.random(in: 1...8)
+            emojis = ["⚽️", "🏀", "🏈", "⚾️", "🥎", "🎾", "🏐", "🏉", "🥏", "🎱", "🪀", "🏓"]
+            emojis = emojis.shuffled()
+        } label: {
+            VStack {
+                Image(systemName: "figure.walk")
+                Text("Activity")
+            }
+        }
+    }
 }
 
 struct CardView: View {
