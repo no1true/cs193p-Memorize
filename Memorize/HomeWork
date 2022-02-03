@@ -3,7 +3,7 @@ Required Tasks
 1. Get the Memorize game working as demonstrated in lectures 1 and 2. Type in all the code. Do not copy/paste from anywhere.
  (  암기 게임을 강의 1과 2의 설명에 따라 작동시키세요. 모든 코드를 입력합니다. 복사/붙여넣지 마십시오. )
 2. You can remove the ⊖ and ⊕ buttons at the bottom of the screen.
- ( 화면 하단에 있는 and, ⊕ 버튼을 제거할 수 있습니다. )
+ ( 화면 하단에 있는 ⊖ and ⊕ 버튼을 제거할 수 있습니다. )
 3. Add a title “Memorize!” to the top of the screen.
  ( 화면 상단에 "암기!"라는 제목을 추가합니다. )
 4. Add at least 3 “theme choosing” buttons to your UI, each of which causes all of the cards to be replaced with new cards that contain emoji that match the chosen theme. You can use Vehicles from lecture as one of the 3 themes if you want to, but you are welcome to create 3 (or more) completely new themes.
@@ -20,3 +20,38 @@ Required Tasks
  ( 선택한 버튼의 텍스트 설명은 우리가 카드의 이모지로 선택한 글꼴보다 매우 작아야 합니다. )
 10. Your UI should work in portrait or landscape on any iPhone. This probably will not require any work on your part (that’s part of the power of SwiftUI), but be sure to experiment with running on different simulators in Xcode to be sure.
  ( UI는 iPhone에서 세로 또는 가로로 작동합니다. 이것은 아마도 당신 쪽에서 어떠한 작업도 요구하지 않을 것입니다(스위프트의 능력의 일부입니다).UI) 그러나 Xcode의 다른 시뮬레이터에서 실행을 실험해 보십시오. )
+-------------------------------------------------------------------------------------------
+# Assignment II: More Memorize
+Required Tasks
+1. Get the Memorize game working as demonstrated in lectures 1 through 4. Type in all the code. Do not copy/paste from anywhere.
+ ( 1번부터 4번 강의에 나온 대로 암기 게임을 하세요. 모든 코드를 입력합니다. 복사/붙여넣지 마십시오. )
+2. If you’re starting with your assignment 1 code, remove your theme-choosing buttons and (optionally) the title of your game.
+ ( assignment 1 코드로 시작할 경우 테마 선택 단추와 (선택적으로) 게임 제목을 제거합니다. )
+3. Add the formal concept of a “Theme” to your Model. A Theme consists of a name for the theme, a set of emoji to use, a number of pairs of cards to show, and an appropriate color to use to draw the cards.
+ ( "테마"의 공식 개념을 모델에 추가합니다. 테마는 테마 이름, 사용할 이모지 세트, 표시할 카드 쌍, 카드를 그리는 데 사용할 적절한 색으로 구성됩니다. )
+4. At least one Theme in your game should show fewer pairs of cards than the number of emoji available in that theme.
+ ( 게임에서 하나 이상의 테마가 해당 테마에서 사용할 수 있는 이모지 수보다 적은 수의 카드를 보여야 합니다. )
+5. If the number of pairs of emoji to show in a Theme is fewer than the number of emojis that are available in that theme, then it should not just always use the first few emoji in the theme. It must use any of the emoji in the theme. In other words, do not have any “dead emoji” in your code that can never appear in a game.
+ ( 테마에 표시할 이모티콘 쌍 수가 해당 테마에서 사용할 수 있는 이모티콘 수보다 적을 경우 테마에서 처음 몇 개의 이모티콘만 항상 사용하는 것은 아닙니다. 테마에 있는 이모티콘을 사용해야 합니다. 다시 말해, 당신의 코드에 게임에서 결코 나타날 수 없는 "죽은 이모티콘"을 가지고 있지 마세요. )
+6. Never allow more than one pair of cards in a game to have the same emoji on it.
+ ( 게임에서 같은 이모티콘이 있는 카드를 한 쌍 이상 허용하지 마십시오. )
+7. If a Theme mistakenly specifies to show more pairs of cards than there are emoji available, then automatically reduce the count of cards to show to match the count of available emoji.
+ ( 테마가 실수로 사용할 수 있는 이모지 수보다 더 많은 카드 쌍을 표시하도록 지정한 경우 사용할 수 있는 이모지 수와 일치하도록 표시할 카드 수를 자동으로 줄입니다. )
+8. Support at least 6 different themes in your game.
+ ( 게임에서 최소 6개의 다른 테마를 지원합니다. )
+9. A new theme should be able to be added to your game with a single line of code.
+ ( 코드 한 줄로 게임에 새로운 테마를 추가할 수 있어야 합니다. )
+10. Add a “New Game” button to your UI (anywhere you think is best) which begins a brand new game.
+ ( UI에 "새 게임" 버튼을 추가하면 새 게임이 시작됩니다. )
+11. A new game should use a randomly chosen theme and touching the New Game button should repeatedly keep choosing a new random theme.
+ ( 새로운 게임은 무작위로 선택한 테마를 사용해야 하며, 새로운 게임 버튼을 반복해서 누르면 계속해서 새로운 랜덤 테마를 선택해야 합니다. )
+12. The cards in a new game should all start face down.
+ ( 새로운 게임의 카드는 모두 아래로 향해서 시작해야 합니다. )
+13. The cards in a new game should be fully shuffled. This means that they are not in any predictable order, that they are selected from any of the emojis in the theme (i.e. Required Task 5), and also that the matching pairs are not all side-by-side like they were in lecture (though they can accidentally still appear side-by-side at random).
+ ( 새로운 게임의 카드는 완전히 섞어야 합니다. 즉, 테마에 있는 이모티콘 중 어떤 이모티콘에서도 선택되며(즉, 필수 과제 5), 일치하는 쌍이 강의 때처럼 모두 나란히 나타나지는 않는다(비록 우연히도 무작위로 나란히 나타날 수 있다). )
+14. Show the theme’s name in your UI. You can do this in whatever way you think looks best.
+ ( UI에 테마 이름을 표시합니다. 당신이 생각하는 가장 좋은 방법으로 이 일을 할 수 있습니다. )
+15. Keep score in your game by penalizing 1 point for every previously seen card that is involved in a mismatch and giving 2 points for every match (whether or not the cards involved have been “previously seen”). See Hints below for a more detailed explanation. The score is allowed to be negative if the user is bad at Memorize.
+ ( 이전에 불일치와 관련된 모든 카드에 대해 1점을 벌점하고 모든 경기에 대해 2점을 부여하여 게임에서 점수를 유지합니다. 자세한 내용은 아래 힌트를 참조하십시오. 사용자가 암기를 잘못하면 점수가 음수일 수 있습니다. )
+16. Display the score in your UI. You can do this in whatever way you think looks best.
+ ( UI에 점수를 표시합니다. 당신이 생각하는 가장 좋은 방법으로 이 일을 할 수 있습니다. )
