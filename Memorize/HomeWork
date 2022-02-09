@@ -55,3 +55,61 @@ Required Tasks
  ( 이전에 불일치와 관련된 모든 카드에 대해 1점을 벌점하고 모든 경기에 대해 2점을 부여하여 게임에서 점수를 유지합니다. 자세한 내용은 아래 힌트를 참조하십시오. 사용자가 암기를 잘못하면 점수가 음수일 수 있습니다. )
 16. Display the score in your UI. You can do this in whatever way you think looks best.
  ( UI에 점수를 표시합니다. 당신이 생각하는 가장 좋은 방법으로 이 일을 할 수 있습니다. )
+
+
+Hints
+1.Economy is still (and is always) valuable in coding.
+경제성은 코딩에서 여전히 (항상) 가치가 있다.
+
+2. Your ViewModel’s connection to its Model can consist of more than a single var model. It can be
+any number of vars. The “Model” is a conceptual entity, not a single struct.
+ViewModel과 해당 모델의 연결은 둘 이상의 다양한 모델로 구성될 수 있습니다. 그럴 수 있다.
+많은 수의 팀들. "모델"은 단일 구조가 아닌 개념적 실체입니다.
+
+3. A Theme is a completely separate thing from a MemoryGame (even though both are part of your application’s Model). You should not need to modify a single line of code in MemoryGame.swift to support themes!
+테마는 메모리 게임과는 완전히 별개의 것입니다(둘 다 응용 프로그램 모델의 일부이긴 하지만). MemoryGame.swift에서 테마를 지원하기 위해 코드 줄을 수정할 필요가 없습니다!
+
+4. Since a Theme is now part of your Model, it must be UI-independent. Representing a color in a UI-independent way is surprisingly nuanced (not just in Swift, but in general). We recommend, therefore, that you represent a color in your Theme as a simple String which is the name of the color, e.g. “orange”. Then let your ViewModel do one of its most important jobs which is to “interpret” the Model for the View. It can provide the View access to the current theme’s color in a UI-dependent representation (like SwiftUI’s Color struct, for example).
+테마는 이제 모델의 일부가 되었으므로 UI에 독립적이어야 합니다. UI 독립적인 방식으로 색을 표현하는 것은 놀랍도록 미묘한 차이가 있다(스위프트뿐만 아니라 일반적으로). 따라서 테마에서 색상을 색상 이름인 단순 문자열(예: "주황색")로 표현하는 것이 좋습니다. 그런 다음 ViewModel이 뷰에 대한 모델을 "해석"하는 가장 중요한 작업 중 하나를 수행하도록 하십시오. UI 의존적 표현(Swift 등)으로 현재 테마의 색상에 대한 보기 액세스를 제공할 수 있습니다.예를 들어 UI의 색상 구조).
+
+5. You don’t have to support every named color in the world (a dozen or so is fine), but be sure to do something sensible if your Model contains a color (e.g. “fuchsia”) that the ViewModel does not know how to interpret.
+전 세계의 모든 명명된 색상을 지원할 필요는 없지만(예: "fuchsia") ViewModel이 해석하는 방법을 모르는 색상이 모델에 포함되어 있다면 적절한 조치를 취해야 합니다.
+
+6. We’ll learn a better (though still not perfect) way to represent a color in a UI independent fashion later in the quarter.
+분기 후반에는 UI 독립적인 방식으로 색상을 표현하는 더 나은 방법(완벽하지는 않지만)에 대해 알아보겠습니다.
+
+7. Required Task 6 means that, for example, a Halloween game should never have four  cards.
+Required Task 6은 예를 들어 할로윈 게임에 4장의 카드가 있으면 안 된다는 것을 의미합니다.
+
+8. Required Task 7 means that, for example, if a theme’s emojis are [" "," ",“ "] and the number of pairs to show in the theme is 47, you must automatically reduce that 47 to 3.
+필수 작업 7은 예를 들어, 테마의 이모티콘이 ["," "," "]이고 테마에 표시할 쌍 수가 47개인 경우, 해당 이모티콘을 자동으로 47개에서 3개로 줄여야 함을 의미합니다.
+
+9. You might find Array’s randomElement() function useful in this assignment (though note that this function (understandably) returns an Optional, so be prepared for that!). This is just a Hint, not a Required Task.
+Array의 randomElement() 함수가 이 할당에 유용할 수 있습니다(그러나 이 함수는 옵션(Optional)을 반환하므로 이에 대비하십시오). 이것은 힌트일 뿐이지 필수 작업이 아닙니다.
+
+10.There is no requirement to use an Optional in this assignment (though you are welcome to do so if you think it would be part of a good solution).
+이 과제에서 '선택 사항'을 사용할 필요는 없습니다(좋은 해결책의 일부라고 생각되는 경우 사용 가능함).
+
+11.You’ll very likely want to keep the static func createMemoryGame() from lecture to create a new memory game. But that function needs a little bit more information to do its job now, so you will almost certainly have to add an argument to it.
+새로운 메모리 게임을 만들기 위해 정적 펑크 CreateMemoryGame()을 강의에 사용하지 않는 것이 좋습니다. 그러나 그 함수는 지금 그 기능을 수행하기 위해 조금 더 많은 정보가 필요하기 때문에, 당신은 거의 확실히 거기에 인수를 추가해야 할 것이다.
+
+12.On the other hand, you obviously won’t need the static let emojis from last week’s lecture anymore because emojis are now obtained from whatever the current Theme is. PAGE 3 OF 8 ASSIGNMENT II: MORE MEMORIZE CS193P IOS APPLICATION DEVELOPMENT SPRING 2021
+반면, 이모티콘은 더 이상 필요하지 않을 것입니다. 왜냐하면 이모티콘은 현재 테마가 무엇이든 간에 얻어지고 있기 때문입니다. 8개 과제 중 3페이지: CS193P IOS 응용 프로그램 개발 2021년 봄 추가 기억
+
+13.It’s quite likely that you will need to add an init() to your ViewModel. That’s because you’ll probably have one var whose initialization depends on another var. You can resolve this kind of catch-22 in an init() because, in an init(), you can control the order in which vars get initialized (whereas, when you use property initializers to initialize vars, the order is undetermined, which is why property initializers are not allowed to reference other vars).
+ViewModel에 init()를 추가해야 할 가능성이 높습니다. 초기화가 다른 변수에 따라 달라지는 하나의 var가 있을 수 있기 때문입니다. init()에서 변수들이 초기화되는 순서를 제어할 수 있기 때문에 이러한 종류의 catch-22를 init()에서 해결할 수 있다.
+
+14.The code in your ViewModel’s init() might look very, very similar to the code involved with your new game mechanism since you obviously want to start a new game in both of these places. Don’t worry if you end up with some code duplication here (you probably don’t quite know enough Swift yet to factor this code out).
+ViewModel의 init()에 있는 코드는 새 게임 메커니즘과 관련된 코드와 매우 비슷해 보일 수 있습니다. 이러한 두 장소에서 새 게임을 시작하려는 것이 분명하기 때문입니다. 여기서 코드 중복이 발생하더라도 걱정하지 마십시오(Swift를 아직 잘 몰라서 이 코드를 제거할 수 없습니다).
+
+15.You might well have to shuffle two different Arrays in this assignment. This is just a Hint, not a Required Task.
+이 과제에서는 서로 다른 두 어레이를 섞어야 할 수도 있습니다. 이것은 힌트일 뿐이지 필수 작업이 아닙니다.
+
+16.An amazing thing about “in-line functions” (actually called “closures”) in Swift is that if you declare a local variable in the scope that contains a closure, the closure can use that variable! For example, if foo below is a function that takes a function () -> Void as an argument, then … let greetings = [“Hello”,“Howdy”,“Heya”].shuffled() foo { print(greetings) // this is legal! greetings is usable here! } This might come in handy for Required Task 5.
+Swift에서 "in-line function"(실제로 "클로저"라고 함)의 놀라운 점은 닫힘이 포함된 범위에서 지역 변수를 선언할 경우 닫힘에서 해당 변수를 사용할 수 있다는 것입니다! 예를 들어, 아래의 foo가 함수 () -> Void를 인수로 취하는 함수라면, ... 인사말 = ["Hello"]를 하자."안녕하세요""헤이".{인쇄(인사말) // 합법입니다! 여기서 인사말을 사용할 수 있습니다! } 이것은 필수 작업 5에 유용할 수 있습니다.
+
+17.Make sure you think carefully about where all of your code lives (i.e. is it in the View, or in the ViewModel, or in the Model?). This assignment is mostly about MVVM, so this is very important to get right.
+모든 코드가 있는 위치(예: 보기, ViewModel, 모델)에 있는지 잘 생각해 보십시오. 이 과제는 대부분 MVVM에 관한 것이므로, 이 과제를 해결하기 위해서는 매우 중요합니다.
+
+18.We’re not making this a Required Task (yet), but try to put the keyword private or private(set) on any variables where you think it would be appropriate.
+이 키워드를 (아직) 필수 작업으로 만들지 않았지만, 적절하다고 생각되는 모든 변수에 private 또는 private(비공개) 키워드를 입력해 보십시오.
