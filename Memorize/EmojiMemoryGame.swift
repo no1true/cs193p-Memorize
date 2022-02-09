@@ -9,16 +9,20 @@ import SwiftUI
 // ViewModel
 
 class EmojiMemoryGame: ObservableObject {
-    static let emojis = ["🚗", "🚕", "🚙" , "🚌" ,"🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🛺", "🚔", "🚍", "🚘", "🚖", "🦼", "🚲", "🛴", "🚡", "🚠"]
+//    private let emojis = ["🚗", "🚕", "🚙" , "🚌" ,"🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🛺", "🚔", "🚍", "🚘", "🚖", "🦼", "🚲", "🛴", "🚡", "🚠"]
     
     static func createMemoryGame() -> MemoryGame<String> {
+        let emojis = themeModel.setOfEmoji
         MemoryGame<String>(numberOfPairsOfCards: 3) { pairIndex in
-                 emojis[pairIndex]
-             }
+            emojis[pairIndex]
+        }
     }
     
     @Published private var model: MemoryGame<String> = createMemoryGame()
-     
+    
+    @Published private var themeModel:Theme {
+        return Theme(nameForTheTheme: ThemeName.car, numberOfPairsOfCards: 2)
+    }
     
     var cards: Array<MemoryGame<String>.Card> {
         return model.cards
@@ -28,5 +32,10 @@ class EmojiMemoryGame: ObservableObject {
     
     func choose(_ card: MemoryGame<String>.Card){
         model.choose(card)
+    }
+    
+    func clickNewGame() {
+        print("clickNewGame")
+        themeModel.newGame()
     }
 }
