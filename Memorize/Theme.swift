@@ -35,7 +35,8 @@ struct Theme {
     var colorToUseToDraw:Color
     
     init(nameForTheTheme:ThemeName, numberOfPairsOfCards:Int ) {
-        setOfEmoji = nameForTheTheme.getEmoji().shuffled()
+        let arrayEmoji:[String] = nameForTheTheme.getEmoji().shuffled()
+        setOfEmoji = Array(arrayEmoji.prefix(numberOfPairsOfCards))
         colorToUseToDraw = Color.orange
 //        setOfEmoji = nameForTheTheme.getEmoji().shuffle()
     }

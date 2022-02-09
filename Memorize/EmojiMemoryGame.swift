@@ -9,20 +9,30 @@ import SwiftUI
 // ViewModel
 
 class EmojiMemoryGame: ObservableObject {
-//    private let emojis = ["🚗", "🚕", "🚙" , "🚌" ,"🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🛺", "🚔", "🚍", "🚘", "🚖", "🦼", "🚲", "🛴", "🚡", "🚠"]
+//    static private let emojis = ["🚗", "🚕", "🚙" , "🚌" ,"🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🛺", "🚔", "🚍", "🚘", "🚖", "🦼", "🚲", "🛴", "🚡", "🚠"]
+    static private var emojis = createTheme().setOfEmoji
+//    static private var emojis = [String]()
+    static private var emojisCount = 5
     
-    lazy var themeModel = Theme(nameForTheTheme: ThemeName.car, numberOfPairsOfCards: 2)
-    
-    func createMemoryGame() -> MemoryGame<String> {
-        let emojis = themeModel.setOfEmoji
-        MemoryGame<String>(numberOfPairsOfCards: 3) { pairIndex in
+    static func createMemoryGame() -> MemoryGame<String> {
+        MemoryGame<String>(numberOfPairsOfCards: emojisCount) { pairIndex in
             emojis[pairIndex]
         }
     }
     
     @Published private var model: MemoryGame<String> = createMemoryGame()
     
+    static func createTheme() -> Theme {
+        let theme = Theme(nameForTheTheme: ThemeName.animal, numberOfPairsOfCards: emojisCount)
+//        emojis = theme.setOfEmoji
+        return theme
+    }
     
+    @Published private var themeModel:Theme = createTheme()
+    
+    var uiColor:Color {
+        return themeModel.colorToUseToDraw
+    }
     
     var cards: Array<MemoryGame<String>.Card> {
         return model.cards
